@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -90,6 +91,20 @@ public class TaskMemoryController {
 	 */
 	@RequestMapping("/get")
 	public Task getById(final Long id) {
+		for(Task t : tasks) {
+			if(t.getId().equals(id)) {
+				return t;
+			}
+		}
+		return null;
+	}
+	/**
+	 * 根据id获取任务
+	 * @param task
+	 * @return
+	 */
+	@RequestMapping("/{id}")
+	public Task get(@PathVariable(name="id") Long id) {
 		for(Task t : tasks) {
 			if(t.getId().equals(id)) {
 				return t;
