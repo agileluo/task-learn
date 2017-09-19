@@ -5,7 +5,7 @@ public class StringUtils {
 		if(s == null) {
 			return true;
 		}
-		if(s.length() == 0 && s.trim().length() == 0) {
+		if(s.length() == 0 || s.trim().length() == 0) {
 			return true;
 		}
 		return false;
