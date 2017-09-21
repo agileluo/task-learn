@@ -20,4 +20,15 @@ public class StringUtilsTest {
 	public void test_blank() {
 		assertTrue(StringUtils.isEmpty("  "));
 	}
+	
+	@Test
+	public void test_notEmpty() {
+		assertFalse(StringUtils.isEmpty("Hello"));
+	}
+	
+	
+	@Test
+	public void test_newInstance() {
+		new StringUtils();
+	}
 }
